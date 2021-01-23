@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Header from "./Header/Header";
+import Login from "./Login/Login";
+import Welcome from "./Welcome/Welcome";
 export default class App extends Component {
 state={
-  user:null
+  user:{}
 }
   render() {
     return (
@@ -11,23 +13,7 @@ state={
         <div className="row">
           <div className="container">
             <div className="col-12">
-        <p>{this.state.user?`User Loged In as ${this.state.user.name}`:"User Loged Out"}</p>
-        <button className="btn btn-primary" onClick={
-          (e) => {
-            e.preventDefault();
-            this.setState({
-              user:{name:"Rishav"}
-            })
-          }
-        }>
-          LogIn
-        </button>
-        <button className="btn btn-secondary ml-2" onClick={
-          (e) => {
-            e.preventDefault();
-            this.setState({user:null})
-          }
-        }>LogOut</button>
+        <p>{this.state.user?<Welcome></Welcome>:<Login></Login>}</p>
             </div>
           </div>
         </div>

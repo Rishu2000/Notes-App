@@ -23,7 +23,7 @@ handleAuth = (username, password) => {
     //Password is incorrect.
     this.setState({
       User:null,
-      Error:"Password is not correct."
+      Error:"Password is incorrect."
     })
   }else{
     //Password is correct.
@@ -32,6 +32,13 @@ handleAuth = (username, password) => {
       Error:null
     })
   }
+};
+handleLogOut = e => {
+  e.preventDefault();
+  this.setState({
+    Error:null,
+    User:null
+  })
 };
   render() {
     return (
@@ -42,7 +49,7 @@ handleAuth = (username, password) => {
             <div className="col-12">
               <p>
                 {this.state.User?
-                <Welcome user={this.state.User}></Welcome>:
+                <Welcome user={this.state.User} handleLogOut={this.handleLogOut}></Welcome>:
                 <Login handleAuth={this.handleAuth} error={this.state.Error}></Login>
                 }
                 </p>

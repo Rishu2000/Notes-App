@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Welcome() {
+function Welcome({user}) {
   return (
     <div className="container">
       <div className="row">
         <div className="col-12">
-          Welcome
+          Welcome {`${user.name}`}
         </div>
       </div>
     </div>

@@ -4,7 +4,8 @@ import Login from "./Login/Login";
 import Welcome from "./Welcome/Welcome";
 export default class App extends Component {
 state={
-  User:null
+  User:null,
+  Error:null
 };
 handleAuth = (username, password) => {
   const Users = {
@@ -14,12 +15,21 @@ handleAuth = (username, password) => {
   }
   if (!Users[username]) {
     //User not found.
+    this.setState({
+      User:null,
+      Error:"User not found."
+    })
   }else if (Users[username] !== password) {
     //Password is incorrect.
+    this.setState({
+      User:null,
+      Error:"Password is not correct."
+    })
   }else{
     //Password is correct.
     this.setState({
-      User:{Name:username}
+      User:{Name:username},
+      Error:null
     })
   }
 };

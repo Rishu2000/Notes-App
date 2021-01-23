@@ -1,10 +1,14 @@
 import React from 'react'
+import LoginForm from "./LoginForm";
 
-function Welcome( {handleAuth}) {
+const Welcome = ({handleAuth}) => {
   return (
     <div className="container">
       <div className="row">
-          <div className="col-6">Login</div>
+          <div className="col-6">
+            <LoginForm handleAuth = {handleAuth}>
+            </LoginForm>
+          </div>
           <div className="col-6">Register</div>
       </div>
     </div>

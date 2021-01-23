@@ -19,6 +19,9 @@ export class LoginForm extends Component {
   render() {
     return (
       <p>Login
+        {this.props.error && (
+          <div className="alert alert-danger">{this.props.error}</div>
+        )}
       <form className="LoginForm">
         {[
           {

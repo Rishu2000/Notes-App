@@ -40,7 +40,7 @@ handleAuth = (username, password) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <p>{this.state.User?<Welcome user={this.state.User}></Welcome>:<Login></Login>}</p>
+              <p>{this.state.User?<Welcome user={this.state.User}></Welcome>:<Login handleAuth={this.handleAuth}></Login>}</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Welcome() {
+function Welcome( {handleAuth}) {
   return (
     <div className="container">
       <div className="row">

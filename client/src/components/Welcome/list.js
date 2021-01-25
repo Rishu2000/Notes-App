@@ -1,26 +1,25 @@
 import React from 'react'
+import {Link,withRouter} from "react-router-dom";
 
-const List = ({items,setCurrentNote,currentNote}) => {
+const List = ({items}) => {
   return (<>
     <div>Notes List</div>
-    <ul class="list-group pr-3">
-      <div>
+    <div class="list-group pr-3">
         {items.map((item,key) => (
-          <li
+          <Link
+          to={"/note-"+key}
           className={
             `list-group-item list-group-item-action`+
-            (currentNote === key?" active":"")
+            (false?" active":"")
           }
-          key={key}
-          onClick={() => setCurrentNote(key)}>
+          key={key}>
             {item}
-          </li>
+          </Link>
         ))
         }
-      </div>
-    </ul>
+    </div>
   </>
   )
 }
 
-export default List;
+export default withRouter(List);

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link,withRouter} from "react-router-dom";
 
-const List = ({items}) => {
+const List = ({items,match}) => {         //No need to pass match because its defined internally.
   return (<>
     <div>Notes List</div>
     <div class="list-group pr-3">
@@ -10,7 +10,7 @@ const List = ({items}) => {
           to={"/note-"+key}
           className={
             `list-group-item list-group-item-action`+
-            (false?" active":"")
+            (+match.params.NoteID.replace("note-","") === key?" active":"")
           }
           key={key}>
             {item}

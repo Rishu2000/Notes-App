@@ -18,7 +18,7 @@ class Welcome extends Component {
             <List items={this.state.Notes}/>
         </div>
         <div className="col-8">
-          <Note currentNote={this.state.CurrentNote}/>
+          <Note/>
           </div>
     </Route>
       </div>

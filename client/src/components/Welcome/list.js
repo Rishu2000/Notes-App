@@ -10,6 +10,7 @@ const List = ({items,match}) => {         //No need to pass match because its de
           to={"/note-"+key}
           className={
             `list-group-item list-group-item-action`+
+            //(match.params.NoteID === `note-${key}`?" active":"")
             (+match.params.NoteID.replace("note-","") === key?" active":"")
           }
           key={key}>

@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react'
 import List from "./list";
-
-const Welcome = ({user,handleLogOut}) => {
-  return (
+class Welcome extends Component {
+  state = {
+    Notes:["List 1","List 2","List 3"],
+    CurrentNote:""
+  }
+  setCurrentNote = CurrentNote => {
+    this.setState({CurrentNote})
+  }
+  render() {
+  const {user,handleLogOut} = this.props;
+    return (
     <div className="container">
       <div className="row">
         <div className="col-12">
@@ -12,12 +20,13 @@ const Welcome = ({user,handleLogOut}) => {
       </div>
       <div className="row">
         <div className="col-4">
-            <List items={["List 1","List 2","List 3"]}/>
+            <List items={this.state.Notes} setCurrentNote={this.setCurrentNote} currentNote={this.state.CurrentNote} />
         </div>
         <div className="col-8">Notes Description</div>
       </div>
     </div>
-  )
+    )
+  }
 }
 
 export default Welcome;

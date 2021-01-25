@@ -1,7 +1,7 @@
 //import React from 'react';
 import {Switch,Route,withRouter} from "react-router-dom";
 
-const Note = ({currentNote,...props}) => {
+const Note = ({match}) => {
   return (
     <Switch>
       <Route path="/" exact={true}>
@@ -9,7 +9,7 @@ const Note = ({currentNote,...props}) => {
       </Route>
       <Route path="/:NoteID">
         <pre className="border rounded bg-light">
-          {JSON.stringify(props,null,2)}
+          {JSON.stringify(match,null,2)}
         </pre>
       </Route>
     </Switch>

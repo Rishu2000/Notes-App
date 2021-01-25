@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
+import {Route} from "react-router-dom";
 import List from "./list";
 import WelcomeHeader from "./WelcomeHeader";
 import Note from "./Note";
 class Welcome extends Component {
   state = {
-    Notes:["List 1","List 2","List 3"],
-    CurrentNote:null
-  }
-  setCurrentNote = CurrentNote => {
-    this.setState({CurrentNote})
+    Notes:["List 1","List 2","List 3"]
   }
   render() {
   const {user,handleLogOut} = this.props;
@@ -16,12 +13,14 @@ class Welcome extends Component {
     <div className="container">
       <WelcomeHeader user={user} handleLogOut={handleLogOut}/>
       <div className="row">
+      <Route path={["/:NoteID","/"]}>
         <div className="col-4">
-            <List items={this.state.Notes} setCurrentNote={this.setCurrentNote} currentNote={this.state.CurrentNote} />
+            <List items={this.state.Notes}/>
         </div>
         <div className="col-8">
           <Note currentNote={this.state.CurrentNote}/>
           </div>
+    </Route>
       </div>
     </div>
     )

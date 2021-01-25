@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import List from "./list";
+import WelcomeHeader from "./WelcomeHeader";
+import Note from "./Note";
 class Welcome extends Component {
   state = {
     Notes:["List 1","List 2","List 3"],
-    CurrentNote:""
+    CurrentNote:null
   }
   setCurrentNote = CurrentNote => {
     this.setState({CurrentNote})
@@ -12,17 +14,14 @@ class Welcome extends Component {
   const {user,handleLogOut} = this.props;
     return (
     <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <p>Welcome {user.Name}</p>
-          <button className="btn btn-warning mb-3" onClick={handleLogOut}>Logout</button>
-        </div>
-      </div>
+      <WelcomeHeader user={user} handleLogOut={handleLogOut}/>
       <div className="row">
         <div className="col-4">
             <List items={this.state.Notes} setCurrentNote={this.setCurrentNote} currentNote={this.state.CurrentNote} />
         </div>
-        <div className="col-8">Notes Description</div>
+        <div className="col-8">
+          <Note currentNote={this.state.CurrentNote}/>
+          </div>
       </div>
     </div>
     )

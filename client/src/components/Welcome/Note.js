@@ -16,4 +16,4 @@ const Note = ({currentNote,...props}) => {
   )
 }
 
-export default Note;
+export default withRouter(Note);

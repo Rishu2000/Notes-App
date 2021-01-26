@@ -7,7 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": ["NodeJS","ExpressJS","API"],
+  "keywords": [
+    "NodeJS",
+    "ExpressJS",
+    "API"
+  ],
   "author": "Rishav kumar shah",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  }
 }

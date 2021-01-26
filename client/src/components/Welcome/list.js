@@ -14,7 +14,7 @@ const List = ({items,match}) => {         //No need to pass match because its de
             (match.params.NoteID && +match.params.NoteID.replace("note-","") === key?" active":"")
           }
           key={key}>
-            {item}
+            {item.Title}
           </Link>
         ))
         }

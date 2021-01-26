@@ -32,7 +32,7 @@ class Welcome extends Component {
             <List items={this.state.Notes}/>
         </div>
         <div className="col-8">
-          <Note/>
+          <Note Notes={this.state.Notes}/>
           </div>
     </Route>
       </div>

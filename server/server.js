@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.get("/", (req,res) => {
-  console.log("Welcome to the API server.")
+  res.json("Welcome to the API server.");
 });
 app.use("/api",api);
 

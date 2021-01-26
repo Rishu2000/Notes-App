@@ -4,7 +4,7 @@ import {Link,withRouter} from "react-router-dom";
 const List = ({items,match}) => {         //No need to pass match because its defined internally.
   return (<>
     <div>Notes List</div>
-    <div class="list-group pr-3">
+    <div class="list-group pr-3 mt-3">
         {items.map((item,key) => (
           <Link
           to={"/note-"+key}

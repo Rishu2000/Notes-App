@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const api = require("./route/api");
+const api = require("./routes/api");
 const app = express();
 const port = 3100;
 

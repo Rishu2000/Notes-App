@@ -1,0 +1,13 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend of the FrontEnd!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": ["NodeJS","ExpressJS","API"],
+  "author": "Rishav kumar shah",
+  "license": "ISC"
+}

@@ -8,30 +8,7 @@ state={
   Error:null
 };
 handleAuth = (username, password) => {
-  const Users = {
-    "Praveen":"hello@123",
-    "Rishav" :"ris@2000",
-    "Ankit":"ank@2000"
-  }
-  if (!Users[username]) {
-    //User not found.
-    this.setState({
-      User:null,
-      Error:"User not found."
-    })
-  }else if (Users[username] !== password) {
-    //Password is incorrect.
-    this.setState({
-      User:null,
-      Error:"Password is incorrect."
-    })
-  }else{
-    //Password is correct.
-    this.setState({
-      User:{Name:username},
-      Error:null
-    })
-  }
+
 };
 handleLogOut = e => {
   e.preventDefault();

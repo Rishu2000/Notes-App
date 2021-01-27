@@ -37,6 +37,9 @@ user.post("/login",(req,res) => {
     })
   }else{
     //Password is correct.
+    req.session.User = {
+        Name:username
+      }
     res.json({
       Error:false,
       Success:true,
@@ -55,6 +58,9 @@ user.post("/register",(req,res) => {
       Message:`User ${username} already exists.`
     });
   }else{
+    req.session.User = {
+        Name:username
+      }
     Users[username] = password;
     res.json({
       Error:false,

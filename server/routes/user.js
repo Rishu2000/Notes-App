@@ -7,7 +7,15 @@ const Users = {
   }
 
 user.get("/",(req,res) => {
+  if (!!req.session.User) {
   res.json("Welcome to /api/user")
+  }else{
+    res.status(404).json({
+      Error:true,
+      Success:false,
+      Message:"User not LogedIn!"
+    })
+  }
 });
 user.post("/login",(req,res) => {
   const {username,password} = req.body;

@@ -46,5 +46,22 @@ user.post("/login",(req,res) => {
     })
   }
 });
+user.post("/register",(req,res) => {
+  const {username,password} = req.body;
+  if (Users[username]) {
+    res.status(409).json({
+      Error:true,
+      Success:false,
+      Message:`User ${username} already exists.`
+    });
+  }else{
+    Users[username] = password;
+    res.json({
+      Error:false,
+      Success:true,
+      Message:`Created new user ${username}.`
+    })
+  }
+});
 
 module.exports = user;

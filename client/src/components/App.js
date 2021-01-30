@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { AuthUser } from '../services/User';
 import Header from "./Header/Header";
 import Login from "./Login/Login";
 import Welcome from "./Welcome/Welcome";
@@ -8,7 +9,19 @@ state={
   Error:null
 };
 handleAuth = (username, password) => {
-
+  AuthUser(username,password)
+  .then(res => {
+    this.setState({
+      User:res.data.Message,
+      Error:null
+    })
+  })
+  .catch(error => {
+    this.setState({
+      User:null,
+      Error:error.response.data.Message
+    })
+  });
 };
 handleLogOut = e => {
   e.preventDefault();

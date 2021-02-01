@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AuthUser,RegUser } from '../services/User';
+import { AuthUser,RegUser,LogOutUser } from '../services/User';
 import Header from "./Header/Header";
 import Login from "./Login/Login";
 import Welcome from "./Welcome/Welcome";
@@ -48,10 +48,12 @@ handleReg = (username, password) => {
 };
 handleLogOut = e => {
   e.preventDefault();
-  this.setState({
+  LogOutUser().then(() => {
+    this.setState({
     AuthError:null,
     User:null
   })
+})
 };
   render() {
     return (

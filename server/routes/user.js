@@ -58,15 +58,20 @@ user.post("/register",(req,res) => {
       Message:`User ${username} already exists.`
     });
   }else{
-    req.session.User = {
-        Name:username
-      }
+    if (!username /*used for username:null*/|| username.length < 4 || password.length < 4) {
+      res.status(400).json({
+        Error:true,
+        Success:false,
+        Message:`Both password and username should be at least 4 character long.`
+      })
+    }else{
     Users[username] = password;
     res.json({
       Error:false,
       Success:true,
       Message:`Created new user ${username}.`
     })
+  }
   }
 });
 user.post("/logout",(req,res) => {

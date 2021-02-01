@@ -8,6 +8,7 @@ state={
   User:null,
   Error:null
 };
+//Implemented server side handle Auth.
 handleAuth = (username, password) => {
   AuthUser(username,password)
   .then(res => {
@@ -16,6 +17,7 @@ handleAuth = (username, password) => {
       Error:null
     })
   })
+//Implemented server side handle Auth.
   .catch(error => {
     this.setState({
       User:null,

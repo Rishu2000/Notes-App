@@ -15,12 +15,14 @@ handleAuth = (username, password) => {
   .then(res => {
     this.setState({
       User:res.data.Message,
-      AuthError:null
+      AuthError:null,
+      RegError:null
     })
   })
   .catch(error => {
     this.setState({
       User:null,
+      RegError:null,
       AuthError:error.response.data.Message
     })
   });
@@ -31,6 +33,7 @@ handleReg = (username, password) => {
     this.setState({
       User:null,
       RegError:null,
+      AuthError:null,
       RegSuccess:res.data.Message
     })
   })
@@ -38,6 +41,7 @@ handleReg = (username, password) => {
     this.setState({
       User:null,
       RegError:error.response.data.Message,
+      AuthError:null,
       RegSuccess:null
     })
   });

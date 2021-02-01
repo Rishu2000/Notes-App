@@ -17,6 +17,11 @@ const List = ({items,match}) => {         //No need to pass match because its de
             {item.Title}
           </Link>
         ))
+        (items.length === 0 && (
+          <span className="list-group-items">
+            No notes Found! Feel free to add one.
+          </span>
+        ))
         }
     </div>
   </>

@@ -5,21 +5,7 @@ import WelcomeHeader from "./WelcomeHeader";
 import Note from "./Note";
 class Welcome extends Component {
   state = {
-    Notes:[
-      {
-        NoteID:"Hello",
-        Title:"Hello World",
-        Desc:"Hello World Hello World Hello World Hello World Hello World Hello World"
-      },{
-        NoteID:"faq",
-        Title:"frequently asked question",
-        Desc:"frequently asked question frequently asked question frequently asked question what question?"
-      },{
-        NoteID:"gfg",
-        Title:"GeeksforGeeks",
-        Desc:"Hi, GeeksforGeeks Hi, GeeksforGeeks Hi, GeeksforGeeks Hi, GeeksforGeeks"
-      }
-    ]
+    Notes:[]
   }
   render() {
   const {user,handleLogOut} = this.props;
@@ -33,8 +19,8 @@ class Welcome extends Component {
         </div>
         <div className="col-8">
           <Note Notes={this.state.Notes}/>
-          </div>
-    </Route>
+        </div>
+      </Route>
       </div>
     </div>
     )

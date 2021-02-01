@@ -2,17 +2,17 @@ const note = require("express").Router();
 
 const Notes = [
       {
-        NoteID:"Hello",
-        Title:"Hello World",
-        Desc:"Hello World Hello World Hello World Hello World Hello World Hello World"
+        NoteID:"Rishav",
+        Title:"Rishav kumar shah",
+        Desc:"Rishav kumar shah, A definition is a statement of the meaning of a term (a word, phrase, or other set of symbols).[1][2] Definitions can be classified into two large categories, intensional definitions (which try to give the sense of a term) and extensional definitions (which try to list the objects that a term describes)."
       },{
-        NoteID:"faq",
-        Title:"frequently asked question",
-        Desc:"frequently asked question frequently asked question frequently asked question what question?"
+        NoteID:"Ankit",
+        Title:"Ankit kumar shah",
+        Desc:"Ankit kumar shah, A definition is a statement of the meaning of a term (a word, phrase, or other set of symbols).[1][2] Definitions can be classified into two large categories, intensional definitions (which try to give the sense of a term) and extensional definitions (which try to list the objects that a term describes)."
       },{
-        NoteID:"gfg",
-        Title:"GeeksforGeeks",
-        Desc:"Hi, GeeksforGeeks Hi, GeeksforGeeks Hi, GeeksforGeeks Hi, GeeksforGeeks"
+        NoteID:"Prad",
+        Title:"Praduman kumar shah",
+        Desc:"Praduman kumar shah, A definition is a statement of the meaning of a term (a word, phrase, or other set of symbols).[1][2] Definitions can be classified into two large categories, intensional definitions (which try to give the sense of a term) and extensional definitions (which try to list the objects that a term describes)."
       }
     ]
 

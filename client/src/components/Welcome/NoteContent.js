@@ -5,10 +5,10 @@ const NoteContent = ({match,Notes}) => {
   return (
     <div>
         <p>Note Description</p>
-        <pre className="border rounded bg-light">
+        <div className="bg-light p-3 rounded">
         <h3>{Title}</h3>
           {Desc}
-        </pre>
+          </div>
     </div>
   )
 }

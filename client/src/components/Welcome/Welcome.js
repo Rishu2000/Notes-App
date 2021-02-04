@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import {Route} from "react-router-dom";
 import List from "./list";
+import {getNotes} from "../../services/note";
 import WelcomeHeader from "./WelcomeHeader";
 import Note from "./Note";
 class Welcome extends Component {
   state = {
     Notes:[]
+  }
+  componentDidMount() {
+    getNotes().then(res => {
+      this.setState({
+        Notes: res.data
+      })
+    })
   }
   render() {
   const {user,handleLogOut} = this.props;
